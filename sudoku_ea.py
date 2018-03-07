@@ -27,19 +27,15 @@ def process_file(fileName):
 		for x, line in enumerate(f):
 			if x!= 3 and x!= 7:
 				for n,a in enumerate(line):
+					#Replace any '.'s with 0's
+						if a == '.':
+							a = 0
 					#Add the value read into the respective location in the grid
 					if n < 3:
-						#Replace any '.'s with 0's
-						if a == '.':
-							a = 0
 						grid[i].append(int(a))
 					elif 3 < n < 7:
-						if a == '.':
-							a = 0
 						grid[i+1].append(int(a))
 					elif 7 < n < 11:
-						if a == '.':
-							a = 0
 						grid[i+2].append(int(a))
 			else:
 				i+=3
